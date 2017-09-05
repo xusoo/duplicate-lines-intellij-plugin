@@ -10,3 +10,5 @@ Supports single lines, multiple selected lines, multiple carets and block select
 Default shortcuts are "Shift + Ctrl + Alt + Up/Down" and "Shift + Command + Option + Up/Down" for macOS.
 
 Compatible with IntelliJ IDEA, PhpStorm, WebStorm, PyCharm, RubyMine, AppCode, CLion, Gogland, DataGrip, Rider, MPS and Android Studio. 
+
+[Jetbrains Plugin Repository](https://plugins.jetbrains.com/plugin/10008-duplicate-lines)
