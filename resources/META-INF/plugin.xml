@@ -1,0 +1,43 @@
+<idea-plugin>
+  <id>DuplicateLines</id>
+  <name>Duplicate Lines</name>
+  <version>1.0</version>
+  <vendor email="me@josepmari.es" url="https://github.com/xusoo/duplicate-lines-intellij-plugin">Josep Marí</vendor>
+
+  <description><![CDATA[
+      <p>
+        Plugin that lets you duplicate the entire selected lines, not just down (like you already can by default), but also up.
+        In both cases, unlike the default action, it will preserve the original selection after the duplication.
+      </p>
+      <p>
+        Supports single lines, multiple selected lines, multiple carets and block selection.
+      </p>
+      <p>
+        Default shortcuts are "Shift + Ctrl + Alt + Up/Down" and "Shift + Command + Option + Up/Down" for macOS.
+      </p>
+    ]]>
+  </description>
+
+  <change-notes><![CDATA[
+      1.0.0 - First release
+    ]]>
+  </change-notes>
+
+  <idea-version since-build="145.0"/>
+
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij"/>
+
+  <actions>
+    <action id="DuplicateLinesUp" class="DuplicateLines" text="Duplicate Lines Up" description="Duplicates entire lines up">
+      <add-to-group group-id="EditorActions" anchor="after" relative-to-action="EditorDuplicateLines"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt UP"/>
+    </action>
+    <action id="DuplicateLinesDown" class="DuplicateLines" text="Duplicate Lines Down" description="Duplicates entire lines down">
+      <add-to-group group-id="EditorActions" anchor="after" relative-to-action="DuplicateLinesUp"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt DOWN"/>
+    </action>
+  </actions>
+
+</idea-plugin>
