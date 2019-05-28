@@ -1,3 +1,4 @@
+import com.intellij.codeInsight.hint.HintManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -7,6 +8,8 @@ import com.intellij.openapi.editor.CaretModel;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.ScrollType;
+
+import java.util.ResourceBundle;
 
 /**
  * Text editor action that duplicates the entire selected lines up or down, moving the caret with the duplicated text.
@@ -30,12 +33,22 @@ public class DuplicateLines extends AnAction {
 			return;
 		}
 
+		if (!editor.getDocument().isWritable()) {
+			showReadOnlyHint(editor);
+			return;
+		}
+
 		CaretModel caretModel = editor.getCaretModel();
 
 		/* Execute the same action for each caret. And we wrap them all in the same command so we can undo them all at once */
 		WriteCommandAction.runWriteCommandAction(event.getProject(), () -> {
 			caretModel.runForEachCaret(caret -> duplicateLines(caret, mode));
 		});
+	}
+
+	private void showReadOnlyHint(Editor editor) {
+		String hint = ResourceBundle.getBundle("messages/EditorBundle").getString("editing.read.only.file.hint");
+		HintManager.getInstance().showInformationHint(editor, hint);
 	}
 
 	/**

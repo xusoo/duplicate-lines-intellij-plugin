@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>DuplicateLines</id>
   <name>Duplicate Lines</name>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <vendor email="me@josepmari.es" url="https://github.com/xusoo/duplicate-lines-intellij-plugin">Josep Marí</vendor>
 
   <description><![CDATA[
@@ -19,7 +19,10 @@
   </description>
 
   <change-notes><![CDATA[
-      1.0.0 - First release
+      <ul>
+        <li>1.0.1 - Show a "File is read-only" hint when the file is not writable</li>
+        <li>1.0.0 - First release</li>
+      </ul>
     ]]>
   </change-notes>
 
