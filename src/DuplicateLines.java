@@ -81,6 +81,11 @@ public class DuplicateLines extends AnAction {
 		int selectionStartLine = editor.offsetToLogicalPosition(selectionStart).line;
 		int selectionEndLine = editor.offsetToLogicalPosition(selectionEnd).line;
 
+		if (caret.getSelectedText() != null && caret.getSelectedText().endsWith("\n")) {
+			/* If the selection ends with a new line, we don't want to duplicate it */
+			selectionEndLine--;
+		}
+
 		/*
 		 * We extend the selection to the start of the first selected line and to the end of the last one in order
 		 * to grab the entire lines and not just the selected text (if any)
