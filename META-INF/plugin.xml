@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>DuplicateLines</id>
   <name>Duplicate Lines</name>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <vendor email="me@josepmari.es" url="https://github.com/xusoo/duplicate-lines-intellij-plugin">Josep Marí</vendor>
 
   <description><![CDATA[
@@ -20,6 +20,7 @@
 
   <change-notes><![CDATA[
       <ul>
+        <li>1.0.2 - Fix deprecation warning message and prevent duplicating empty lines at the end</li>
         <li>1.0.1 - Show a "File is read-only" hint when the file is not writable</li>
         <li>1.0.0 - First release</li>
       </ul>
