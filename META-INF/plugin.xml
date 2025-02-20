@@ -1,17 +1,19 @@
 <idea-plugin>
   <id>DuplicateLines</id>
   <name>Duplicate Lines</name>
-  <version>1.0.2</version>
+  <version>1.1.0</version>
   <vendor email="me@josepmari.es" url="https://github.com/xusoo/duplicate-lines-intellij-plugin">Josep Marí</vendor>
 
   <description><![CDATA[
       <p>
-        Plugin that lets you duplicate the entire selected lines, not just down (like you already can by default), but also up.
-        In both cases, unlike the default action, it will preserve the original selection after the duplication.
+        This plugin lets you duplicate the entire selected lines, not just down (built-in action), but also up.
+        In both cases, unlike the built-in action, it will preserve the original selection after the duplication.
       </p>
+      <br>
       <p>
         Supports single lines, multiple selected lines, multiple carets and block selection.
       </p>
+      <br>
       <p>
         Default shortcuts are "Shift + Ctrl + Alt + Up/Down" and "Shift + Command + Option + Up/Down" for macOS.
       </p>
@@ -20,14 +22,31 @@
 
   <change-notes><![CDATA[
       <ul>
-        <li>1.0.2 - Fix deprecation warning message and prevent duplicating empty lines at the end</li>
-        <li>1.0.1 - Show a "File is read-only" hint when the file is not writable</li>
-        <li>1.0.0 - First release</li>
+        <li>
+          <b>1.1.0</b>
+          <ul>
+            <li>Fix deprecation warning message (ActionUpdateThread)</li>
+            <li>Prevent duplicating empty lines at the end</li>
+            <li>Minimum supported version is now 2022.3</li>
+          </ul>
+        </li>
+        <li>
+          <b>1.0.1</b>
+          <ul>
+            <li>Show a "File is read-only" hint when the file is not writable</li>
+          </ul>
+        </li>
+        <li>
+          <b>1.0.0</b>
+          <ul>
+            <li>First release</li>
+          </ul>
+        </li>
       </ul>
     ]]>
   </change-notes>
 
-  <idea-version since-build="145.0"/>
+  <idea-version since-build="223.0"/>
 
   <depends>com.intellij.modules.lang</depends>
 
